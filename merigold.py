@@ -20,7 +20,7 @@ pipe.set_progress_bar_config(disable=True)
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
-    raise RuntimeError("Kamera açılamadı.")
+    raise RuntimeError("Camera is not opened.")
 
 
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -34,10 +34,10 @@ latent_common = torch.randn(
 last_frame_latent = None
 frames = []
 
-print("Kamera başlatıldı. Çıkmak için Ctrl+C veya belirli kare sayısına ulaşmayı bekleyin.")
+print("Camera is on. To terminate press Ctrl+c or wait for the frames to be recorded.")
 
 try:
-    for _ in tqdm(range(50), desc="Kameradan Kare İşleniyor"):  
+    for _ in tqdm(range(50), desc="Frames are processing"):  
         ret, frame = cap.read()
         if not ret:
             break

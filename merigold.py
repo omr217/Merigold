@@ -62,4 +62,4 @@ finally:
 
 
 diffusers.utils.export_to_gif(frames, path_out, fps=fps)
-print(f"{path_out} olarak kaydedildi.")
+print(f"Saved to {path_out} .")
